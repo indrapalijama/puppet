@@ -1,0 +1,17 @@
+{
+  "name": "bot-wa",
+  "version": "1.0.0",
+  "description": "expressjs wa bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Indra Palijama",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.0"
+  }
+}
