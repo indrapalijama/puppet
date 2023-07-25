@@ -73,13 +73,14 @@
 // });
 
 module.exports = (req, res) => {
-  // const name = req.query.name || "stranger";
-  // res.status(200).send(`Hello, ${name}!`);
   const qrcode = require("qrcode-terminal");
-  const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
+  const { Client, NoAuth, MessageMedia } = require("whatsapp-web.js");
   const https = require("https");
   const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new NoAuth(),
+    puppeteer: {
+      args: ["--no-sandbox"],
+    },
   });
   client.initialize();
   client.on("qr", (qr) => {
