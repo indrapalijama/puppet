@@ -84,6 +84,7 @@ module.exports = (req, res) => {
   client.initialize();
   client.on("qr", (qr) => {
     qrcode.generate(qr, { small: true });
+    res.status(200).send(qrcode.generate(qr, { small: true }));
   });
   client.on("authenticated", () => {
     console.log("AUTHENTICATED");
@@ -138,6 +139,4 @@ module.exports = (req, res) => {
       message.reply("pong");
     }
   });
-
-  res.status(200).send(qrcode.generate(qr, { small: true }));
 };
