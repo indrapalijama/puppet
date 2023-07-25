@@ -78,9 +78,6 @@ module.exports = (req, res) => {
   const https = require("https");
   const client = new Client({
     authStrategy: new NoAuth(),
-    puppeteer: {
-      args: ["--no-sandbox"],
-    },
   });
   client.initialize();
   client.on("qr", (qr) => {
